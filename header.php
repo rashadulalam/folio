@@ -1,15 +1,27 @@
+<?php
+
+  /*
+  This template for header
+  @package folio
+  */
+
+
+?>
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?> >
 
   <head>
 
-    <meta charset="utf-8">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Resume - Start Bootstrap Theme</title>
-
+    <meta name="description" content="<?php bloginfo( 'description' ); ?>">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <title><?php bloginfo( 'name' ); wp_title(); ?></title>
+    <?php if( is_singular() && pings_open( get_queried_object() ) ) : ?>
+        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?> ">
+    <?php endif; ?>
     <!-- Bootstrap core CSS -->
     <link href="<?php echo get_template_directory_uri(); ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -20,10 +32,10 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo get_template_directory_uri(); ?>/css/resume.min.css" rel="stylesheet">
-
+    <?php wp_head(); ?>
   </head>
 
-  <body id="page-top">
+  <body id="page-top" <?php body_class(); ?>>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
@@ -36,6 +48,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
@@ -56,5 +70,7 @@
             <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
           </li>
         </ul>
+
+
       </div>
     </nav>
