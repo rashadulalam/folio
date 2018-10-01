@@ -49,28 +49,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
+        
+        <?php
 
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-          </li>
-        </ul>
+          wp_nav_menu( array(
+            'theme_location'  => 'primary',
+            'container'       => false,
+            'menu_class'      => 'navbar-nav',
+            'walker'          => new Folio_Navwalker(),
+          ) );
 
+        ?>
 
       </div>
     </nav>
